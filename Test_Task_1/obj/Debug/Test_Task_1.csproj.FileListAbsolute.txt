@@ -1,0 +1,30 @@
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.ProgrammMainForm.resources
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.Properties.Resources.resources
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.GenerateResource.cache
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.CoreCompileInputs.cache
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.exe.config
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.exe
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.pdb
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.exe
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.pdb
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.exe.config
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.exe
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.pdb
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.ProgrammMainForm.resources
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.Properties.Resources.resources
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.exe
+C:\Users\User\source\repos\Test_Task_1\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.pdb
+B:\Albert Ziatdinov\C#\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.exe.config
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.exe
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\bin\Debug\Test_Task_1.pdb
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.ProgrammMainForm.resources
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.Properties.Resources.resources
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.exe
+C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.pdb
