@@ -1,7 +1,7 @@
-# VeeamTest
-Задача 1
-Написать программу, которая будет запускать процесс и с указанным интервалом времени собирать о нём следующую статистику:
-•	Загрузка CPU (в процентах);
-•	Потребление памяти: Working Set и Private Bytes (для Windows-систем) или Resident Set Size и Virtual Memory Size (для Linux-систем);
-•	Количество открытых хендлов (для Windows-систем) или файловых дескрипторов (для Linux-систем).
-Сбор статистики должен осуществляться всё время работы запущенного процесса. Путь к файлу, который необходимо запустить, и интервал сбора статистики должны указываться пользователем. Собранную статистику необходимо сохранить на диске. Представление данных должно в дальнейшем позволять использовать эту статистику для автоматизированного построения графиков потребления ресурсов.
+# Test C#
+
+Aufgabe:
+Schreiben eine Programme in C# welche macht die folgende Aktions und sammelt folgende Statistik:
+- CPU Auslastung (in Perzent)
+- Arbeitsspeicher benutzen: Working Ser und Private Bytes
+- Wie viel Handle geöffnet.
