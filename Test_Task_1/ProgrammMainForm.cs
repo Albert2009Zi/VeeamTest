@@ -1,6 +1,6 @@
 ﻿// Testaufgabe für die Position Developer C#
 // Bewerber: Albert Ziatdinov
-// Arbeitgeber: Veeam
+// Arbeitgeber: 
 // Datum: 03.02.2022
 
 using System;
