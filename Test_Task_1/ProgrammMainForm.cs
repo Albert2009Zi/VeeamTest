@@ -1,7 +1,7 @@
-﻿// Тестовое задание на должность Junior Developer in QA
-// Соискатель Альберт Зиатдинов
-// Работодатель Veeam
-// Дата 03.02.2022
+﻿// Testaufgabe für die Position Developer C#
+// Bewerber: Albert Ziatdinov
+// Arbeitgeber: Veeam
+// Datum: 03.02.2022
 
 using System;
 using System.Windows.Forms;
@@ -13,164 +13,160 @@ namespace Test_Task_1
 {
     public partial class ProgrammMainForm : Form
     {
-        private string opdApp;                        //Имя запущенного через форму приложения 
-        private string logFilePathName;               //Имя пути к лог-файлу
-        private bool stopFlag = false;                //Нажимался ли Stop
+        private string opdApp;                        // Name der über das Formular gestarteten Anwendung
+        private string logFilePathName;               // Pfad- und Dateiname der Log-Datei
+        private bool stopFlag = false;                // Wurde Stop gedrückt
         public ProgrammMainForm()
         {
             InitializeComponent();
         }
 
-
-        // Обработчик chekbox'а записи информации в файл. Отображение других элементов формы
-        // возможно только при активации данного chekbox'а (см. условия задания)
+        // Handler für das Checkbox-Ereignis, das das Schreiben von Informationen in eine Datei steuert.
+        // Andere Formularelemente werden nur angezeigt, wenn diese Checkbox aktiviert ist (siehe Aufgabenstellung)
         private void ckbSaveLogFile_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbSaveLogFile.Checked)                            //если выбран checkbox, то ...
+            if (ckbSaveLogFile.Checked)                            // wenn Checkbox ausgewählt ist ...
             {
-                elementsVisible(true);                             //включаем "видимость" элементов основной формы
-                DialogResult drtLogFile = fbdLogFile.ShowDialog(); //вызов диалога выбора католога расположения создаваемого Log файла 
+                elementsVisible(true);                             // zeigen wir die Elemente des Hauptformulars an
+                DialogResult drtLogFile = fbdLogFile.ShowDialog(); // Öffnen des Dialogs zur Auswahl des Speicherorts der Log-Datei 
 
-                if (drtLogFile == DialogResult.OK)                 //выбран путь и нажата OK
+                if (drtLogFile == DialogResult.OK)                 // Pfad ausgewählt und OK gedrückt
                 {
-                    logFilePathName = fbdLogFile.SelectedPath;     //переменная - путь к папке Log файла
+                    logFilePathName = fbdLogFile.SelectedPath;     // Variable = Pfad zum Ordner für die Log-Datei
                 }
             }
-            else                                                   //иначе ...
+            else                                                   // ansonsten ...
             {
-                elementsVisible(false);                            //выключаем "видимость" элементов основной формы
+                elementsVisible(false);                            // Elemente des Hauptformulars ausblenden
             }
         }
 
-        // Обработчик нажатия кнопки Run
+        // Handler für den Klick auf die Run-Schaltfläche
         private void btnRun_Click(object sender, EventArgs e)
         {
-            if (btnRun.Text == "Run")                             //если кнопка нажата в "статусе" Run, то ...
+            if (btnRun.Text == "Run")                             // wenn der Button den Status "Run" hat ...
             {
-                if (stopFlag == true)                             //если Stop уже нажимали и выбранное приложение уже закрывалось, то ...
+                if (stopFlag == true)                             // wenn Stop bereits gedrückt wurde und die ausgewählte App geschlossen war ...
                 {
-                    using (Process.Start(opdApp)) { };            //запустить выбранное ранее приложение
+                    using (Process.Start(opdApp)) { };            // starte die zuvor ausgewählte Anwendung
                 }
-                elementsVisible(true);                            //включаем "видимость" элементов основной формы
-                runTimer.Start();                                 //запуск таймера 
-                runTimer.Tick += new EventHandler(runTimer_Tick); //вызов обработчика таймера
-                btnRun.Text = "Stop";                             //меняем текст кнопки на Stop, "предалагаем" другое состояние кнопки
+                elementsVisible(true);                            // Formularelemente anzeigen
+                runTimer.Start();                                 // Timer starten
+                runTimer.Tick += new EventHandler(runTimer_Tick); // Timer-Handler aufrufen
+                btnRun.Text = "Stop";                             // Text der Schaltfläche auf Stop ändern
             }
-            else if (btnRun.Text == "Stop")                       //иначе, если кнопка нажата в "статусе" Stop, то ...
+            else if (btnRun.Text == "Stop")                       // ansonsten, wenn Button den Status "Stop" hat ...
             {
-                elementsVisible(false);                           //выключаем "видимость" элементов основной формы
-                runTimer.Stop();                                  //остановка таймера 
-                CloseProcess(opdApp);                             //остановка приложения, запущенного из формы
-                stopFlag = true;                                  //флаг в истину, т.к. кнопка была нажата  
-                btnRun.Text = "Run";                              //меняем текст кнопки на Run, "предалагаем" другое состояние кнопки
+                elementsVisible(false);                           // Formularelemente ausblenden
+                runTimer.Stop();                                  // Timer stoppen
+                CloseProcess(opdApp);                             // gestartete Anwendung schließen
+                stopFlag = true;                                  // Flag auf true setzen, da Button gedrückt wurde
+                btnRun.Text = "Run";                              // Text der Schaltfläche auf Run ändern
             }
         }
 
-        //Обработчик таймера формы
+        // Timer-Handler des Formulars
         private void runTimer_Tick(object sender, EventArgs e)
         {
-            runTimer.Interval = (int)nudTimeSet.Value * 1000;                                            //Свойство Interval получаем с NemericUpDown элемента формы и умножаем на 1000, 
-                                                                                                         //т.к. одиночный "тик" таймера - 1 миллисекунда
-                                                                                                         
-            pgbProcessor.Value = (int)(pfcProcessor.NextValue());                                        //Значение загрузки процессора с соответствующего PerfomanceCounter'а 
-            lblProcessor.Text = "CPU Load Progress: " + pgbProcessor.Value.ToString() + "%";             //Текст для метки на groupbox'е, содержащий иформацию о работе процессоре 
+            runTimer.Interval = (int)nudTimeSet.Value * 1000;                                            // Interval vom NumericUpDown auslesen und mit 1000 multiplizieren
+                                                                                                         // da ein Timer-Tick 1 Millisekunde entspricht
 
-            lblMemoryAvailable.Text = "Available RAM: " + ((int)pfcRam.NextValue()).ToString() + "Mb";   //Количество доступной оперативной памяти
+            pgbProcessor.Value = (int)(pfcProcessor.NextValue());                                        // CPU-Auslastung vom PerformanceCounter
+            lblProcessor.Text = "CPU Load Progress: " + pgbProcessor.Value.ToString() + "%";             // Text für Label mit CPU-Auslastung
 
-                Process[] stsRunningProcess = Process.GetProcessesByName(opdApp);                        //создаем массив из запущенных процессов с именем opdApp
+            lblMemoryAvailable.Text = "Available RAM: " + ((int)pfcRam.NextValue()).ToString() + "Mb";   // Verfügbarer Arbeitsspeicher
 
-         //если процесс запущен, то выдаем в форму его параметры, указанные в задаче, то ...
-            if (stsRunningProcess.Length > 0) 
-                {
-                    lblProcessName.Text    = "Process Name: " + (string)stsRunningProcess[0].ProcessName;
-                    lblWorkingSet64.Text   = "Working Set Status: " + (int)stsRunningProcess[0].WorkingSet64 / 1024 / 1024 + "Mb";
-                    lblPrivateBytes64.Text = "Pivate Bytes Status: " + (int)stsRunningProcess[0].PrivateMemorySize64 / 1024 / 1024 + "Mb";
-                    lblHandleCount.Text    = "Handle Count: " + (int)stsRunningProcess[0].HandleCount;
-                    LogFileWrite((int)pgbProcessor.Value, (int)stsRunningProcess[0].WorkingSet64 / 1024 / 1024, (int)stsRunningProcess[0].PrivateMemorySize64
-                    / 1024 / 1024, (int)stsRunningProcess[0].HandleCount); // и пишем эти же параметры в файл
-                }          
-             
+            Process[] stsRunningProcess = Process.GetProcessesByName(opdApp);                             // Array der laufenden Prozesse mit Name opdApp
+
+            // Wenn Prozess läuft, geben wir die Parameter auf dem Formular aus
+            if (stsRunningProcess.Length > 0)
+            {
+                lblProcessName.Text = "Process Name: " + (string)stsRunningProcess[0].ProcessName;
+                lblWorkingSet64.Text = "Working Set Status: " + (int)stsRunningProcess[0].WorkingSet64 / 1024 / 1024 + "Mb";
+                lblPrivateBytes64.Text = "Private Bytes Status: " + (int)stsRunningProcess[0].PrivateMemorySize64 / 1024 / 1024 + "Mb";
+                lblHandleCount.Text = "Handle Count: " + (int)stsRunningProcess[0].HandleCount;
+                LogFileWrite((int)pgbProcessor.Value, (int)stsRunningProcess[0].WorkingSet64 / 1024 / 1024, (int)stsRunningProcess[0].PrivateMemorySize64
+                / 1024 / 1024, (int)stsRunningProcess[0].HandleCount); // Parameter auch in Datei schreiben
+            }
         }
 
-        //обработчик выбора приложения
+        // Handler für die Auswahl der Anwendung
         private void grbAppRadiobutton_CheckedChanged(object sender, EventArgs e)
-        { 
-            RadioButton rbnAppSelected = (sender as RadioButton); //переменная с типом radiobutton, которой присваивается объект вызвавший обработчик
-            string buttonName = (string) rbnAppSelected.Tag;      //переменной присваиваем имя тега radiobutton с главной формы
-            if (rbnAppSelected.Checked)                           //если своейство checked истинно (radiobutton выбран), то ... 
+        {
+            RadioButton rbnAppSelected = (sender as RadioButton); // Variable vom Typ RadioButton, die das auslösende Objekt erhält
+            string buttonName = (string)rbnAppSelected.Tag;      // Name des Tags des RadioButtons
+            if (rbnAppSelected.Checked)                           // wenn RadioButton ausgewählt ist ...
             {
-                switch (buttonName)                               //переключатель по имени процесса
+                switch (buttonName)                               // Switch basierend auf Prozessname
                 {
-                    case "notepad":                                 
-                        using (Process.Start("notepad")) { };     // запускаем блокнот
-                        break;                                         
-                    case "cmd":
-                        using (Process.Start("cmd")) { };         // запускаем командную строку 
+                    case "notepad":
+                        using (Process.Start("notepad")) { };     // Notepad starten
                         break;
-                    default:                                      // по "дефолту" ничего не делаем, просто выходим из переключателя
+                    case "cmd":
+                        using (Process.Start("cmd")) { };         // Kommandozeile starten
+                        break;
+                    default:                                      // default: nichts tun
                         break;
                 }
-                btnRun.Enabled = true;                            //активировалась кнопка Run
-                CloseAnotherApps(grbApps);                        //закрыть другое приложение
-            }             
+                btnRun.Enabled = true;                            // Run-Button aktivieren
+                CloseAnotherApps(grbApps);                        // andere Anwendungen schließen
+            }
         }
 
-        //объект (функция) закрывает предыдущее открытое приложение, при выборе нового 
+        // Funktion schließt die vorherige geöffnete Anwendung, wenn eine neue ausgewählt wird
         private void CloseAnotherApps(GroupBox grbApps)
         {
-            foreach (RadioButton rbnSelection in grbApps.Controls) //rbnSelection - это от "Радиобаттон селекшн". Можно какой-нибудь оупенэйр рэйв так назвать.
+            foreach (RadioButton rbnSelection in grbApps.Controls)
             {
-                
-                if (!rbnSelection.Checked)                         //если своейство checked ложно (radiobutton не выбран), то ... 
+                if (!rbnSelection.Checked)                         // wenn RadioButton nicht ausgewählt ist ...
                 {
-                    CloseProcess((string) rbnSelection.Tag);       //закрываем процесс
+                    CloseProcess((string)rbnSelection.Tag);       // Prozess schließen
                 }
-                else if (rbnSelection.Checked)                     //иначе, если своейство checked истинно (radiobutton выбран), то ...
+                else if (rbnSelection.Checked)                     // wenn RadioButton ausgewählt ist ...
                 {
-                    opdApp = (string) rbnSelection.Tag;            //присваиваем переменной opdApp значения тега выбранного radiobutton
+                    opdApp = (string)rbnSelection.Tag;            // opdApp = Tag des ausgewählten RadioButtons
                 }
             }
         }
 
-        //объект (функция) закрывает процесс по имени, которое в неё передали в качестве аргумента
+        // Funktion schließt einen Prozess nach übergebenem Namen
         private void CloseProcess(string prsName)
         {
-            if (opdApp != null)                                           //если opdApp не равно null
+            if (opdApp != null)                                           // wenn opdApp nicht null ist
             {
-                Process[] AllOpened = Process.GetProcesses();             //получаем имена всех открытых в системе процессов
-               
-                foreach (Process DetectedProcess in AllOpened)            //идем циклом по списку открытых процессов 
+                Process[] AllOpened = Process.GetProcesses();             // alle laufenden Prozesse abrufen
+
+                foreach (Process DetectedProcess in AllOpened)
                 {
-                    if (DetectedProcess.ProcessName.Contains(prsName))    //если встречаем процесс, имя которого содержит значение равное имени, переданного в функцию
-                                                                          //в качестве аршумента, то ...
+                    if (DetectedProcess.ProcessName.Contains(prsName))    // wenn Prozessname übereinstimmt ...
                     {
-                        DetectedProcess.Kill();                           //завершаем процесс
+                        DetectedProcess.Kill();                           // Prozess beenden
                     }
                 }
             }
         }
 
-        //объект (функция) записывает искомые параметры в Log файл, находящийся по пути заданном пользователем через диалог
+        // Funktion schreibt die gesuchten Parameter in die Log-Datei
         private void LogFileWrite(int processorLoad, int workingSet, int privateBytes, int handleCount)
         {
-            string path = @logFilePathName;                             //строковая переменная path хранящая путь к файлу
-            FileInfo fileInfo = new FileInfo(path);                     //переменной типа FileInfo присваиваем значения метода FileInfo с аргументом path
+            string path = @logFilePathName;
+            FileInfo fileInfo = new FileInfo(path);
 
             if (!fileInfo.Exists)
             {
-                try                                                     //try-catch используем при работе с файлами, т.к. возможны непредвиденные сбои (исключения)
+                try
                 {
-                    using (var strWriter = File.AppendText($"{path}logFile.txt")) //созваем файл с именем Veeam_LogFile.txt по пути заданном через диалог
+                    using (var strWriter = File.AppendText($"{path}logFile.txt")) // Log-Datei erstellen
                     {
-                        //пишем в файл искомые данные с установленным интервалом
+                        // Daten mit Zeitstempel schreiben
                         strWriter.WriteLine($"{DateTime.Now:T}" + "   " + processorLoad + "   " + workingSet + "   " + privateBytes + "   " + handleCount);
                     }
-                    // хотим посмотреть, что пишется в файл из VisualStudio, "раскомментируем" строку ниже  
+                    // Debug-Ausgabe in Visual Studio
                     Debug.WriteLine($"{DateTime.Now:T}" + "   " + processorLoad + "   " + workingSet + "   " + privateBytes + "   " + handleCount);
                 }
-                catch (Exception ex)                                     //в случае исключения
+                catch (Exception ex)
                 {
-                    Console.WriteLine("The process failed: {0}", ex.ToString()); //пишем в консоль сообщение содержащее данное исключение
+                    Console.WriteLine("The process failed: {0}", ex.ToString()); // Fehlermeldung in Konsole
                 }
             }
 
@@ -180,21 +176,21 @@ namespace Test_Task_1
         {
             if (isVisible == true)
             {
-                grbApps.Visible          = true;      //виден groupbox приложения, которое можно запустить
-                grbProcessorLoad.Visible = true;      //виден groupbox загрузки процессора
-                grbRAMLoad.Visible       = true;      //виден groupbox доступной памяти  
-                grbTestTaskParam.Visible = true;      //виден groupbox параметров задачи от Veeam
+                grbApps.Visible = true;      // GroupBox für auswählbare Apps sichtbar
+                grbProcessorLoad.Visible = true;      // GroupBox CPU-Auslastung sichtbar
+                grbRAMLoad.Visible = true;      // GroupBox RAM sichtbar
+                grbTestTaskParam.Visible = true;      // GroupBox Aufgabenparameter sichtbar
             }
             else if (isVisible == false)
             {
-                //скрыть элементы отображения информации о процессах    
-                grbApps.Visible          = false;
+                // Formularelemente ausblenden    
+                grbApps.Visible = false;
                 grbProcessorLoad.Visible = false;
-                grbRAMLoad.Visible       = false;
+                grbRAMLoad.Visible = false;
                 grbTestTaskParam.Visible = false;
             }
         }
     }
 }
 
-//Спасибо за внимание.
+// Danke für Ihre Aufmerksamkeit.

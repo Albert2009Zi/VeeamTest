@@ -28,3 +28,14 @@ C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Tas
 C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.exe
 C:\Users\User\source\repos\Veeam_Test\Test_Task_1\Test_Task_1\obj\Debug\Test_Task_1.pdb
+C:\dev\C#\Veeam\Test_Task_1\bin\Debug\Test_Task_1.exe.config
+C:\dev\C#\Veeam\Test_Task_1\bin\Debug\Test_Task_1.exe
+C:\dev\C#\Veeam\Test_Task_1\bin\Debug\Test_Task_1.pdb
+C:\dev\C#\Veeam\Test_Task_1\obj\Debug\Test_Task_1.csproj.AssemblyReference.cache
+C:\dev\C#\Veeam\Test_Task_1\obj\Debug\Test_Task_1.csproj.SuggestedBindingRedirects.cache
+C:\dev\C#\Veeam\Test_Task_1\obj\Debug\Test_Task_1.ProgrammMainForm.resources
+C:\dev\C#\Veeam\Test_Task_1\obj\Debug\Test_Task_1.Properties.Resources.resources
+C:\dev\C#\Veeam\Test_Task_1\obj\Debug\Test_Task_1.csproj.GenerateResource.cache
+C:\dev\C#\Veeam\Test_Task_1\obj\Debug\Test_Task_1.csproj.CoreCompileInputs.cache
+C:\dev\C#\Veeam\Test_Task_1\obj\Debug\Test_Task_1.exe
+C:\dev\C#\Veeam\Test_Task_1\obj\Debug\Test_Task_1.pdb
